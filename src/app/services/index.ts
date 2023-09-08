@@ -1,2 +1,2 @@
-export * from "./user.service"
-export * from "./post.service"
+export * from './resolvers';
+export * from './user.service';
