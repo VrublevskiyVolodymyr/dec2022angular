@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {IUser} from "../interfaces";
-import {Observable} from "rxjs";
+import {delay, Observable} from "rxjs";
 import {urls} from "../constants";
 
 @Injectable({
@@ -16,7 +16,7 @@ getAll(): Observable<IUser[]>{
 }
 
 getById(id:number): Observable<IUser>{
-  return this.httpClient.get<IUser>(urls.users.byId(id))
+  return this.httpClient.get<IUser>(urls.users.byId(id)).pipe(delay(100))
 }
 }
 

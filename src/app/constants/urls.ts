@@ -1,14 +1,21 @@
+import {environment} from "../../environments/environment";
+
 // @ts-ignore
+const {CAR_API, JPH_API} = environment;
 
-const baseUrl = "https://jsonplaceholder.typicode.com"
+const cars = `${CAR_API}/cars`
+const users = `${JPH_API}/users`
 
-const users = `${baseUrl}/users`
-const posts = `${baseUrl}/posts`
 const urls = {
- users: {
-   base: users,
-   byId:(id:number):string => `${users}/${id}`
- }
+  cars: {
+    base: cars,
+    byId: (id: number): string => `${cars}/${id}`
+  },
+  users: {
+    base: users,
+    byId: (id: number): string => `${users}/${id}`
+
+  }
 }
 
 export {
